@@ -11,8 +11,8 @@ public class TableTest {
     }
 
     @Test
-    public void remove() {//
-    }//
+    public void remove() {
+    }
 
     @Test
     public void showAll() {
