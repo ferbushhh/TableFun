@@ -12,7 +12,7 @@ public class TableTest {
 
     @Test
     public void remove() {//
-    }
+    }//
 
     @Test
     public void showAll() {
