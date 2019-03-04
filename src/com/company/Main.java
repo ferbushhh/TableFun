@@ -4,10 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
         Table mass = new Table();
-        mass.add(1.0, 1.0);
-        mass.add(7, 8);
+        mass.add(8,9);
+        mass.add(1,1);
+        mass.add(6,7);
+        //mass.findX(2);
+        System.out.println(mass.getY(2));
 
-        System.out.println(mass.interpolate(9));
+        //System.out.println(mass.interpolate(9));
         //mass.showAll();
     }
 }

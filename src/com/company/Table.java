@@ -7,18 +7,35 @@ import java.util.List;
 import static java.lang.Double.MAX_VALUE;
 
 public class Table {
+
     private ArrayList<Pair> table = new ArrayList<>();
 
     public Table(){
     }
 
-    public Pair getPair(int i) {
+    public Pair getPair(int i) { //выдает пару по индексу
         Pair pair = table.get(i);
         return (pair);
     }
 
-    public int size() {
+    public int size() { //вычисляет размер
         return table.size();
+    }
+
+    public double getY(double x) { //выдает y по данному x
+        boolean flag = false;
+        try {
+        for (int i = 0; i < table.size(); i++) {
+                if (table.get(i).getX() == x) {
+                    flag = true;
+                    return table.get(i).getY();
+                }
+            }
+        throw new IllegalArgumentException(" ");
+        } catch (IllegalArgumentException e) {
+            System.out.println("No pair");
+        }
+        return 0;
     }
 
     public void add(double x, double y) {
@@ -63,7 +80,7 @@ public class Table {
         double min = MAX_VALUE;
         for (int i = 0; i < n; i++) {
             if (Math.abs(x0 - table.get(i).getX()) < min){
-                min = Math.abs(x0) - Math.abs(table.get(i).getX());
+                min = Math.abs(x0 - table.get(i).getX());
                 index = i;
             }
         }
