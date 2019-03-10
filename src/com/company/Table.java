@@ -38,7 +38,7 @@ public class Table {
         return 0;
     }
 
-    public void add(double x, double y) {
+    public void add(double x, double y) { //добавляет пару в таблицу
         int size = table.size();
         Pair pair = new Pair(x, y);
         try {
@@ -52,7 +52,7 @@ public class Table {
 
     }
 
-    public void remove (double x, double y) {
+    public void remove (double x, double y) { //удаляет пару из таблицы
         boolean flag = false;
         try {
             for (int i = 0; i < table.size(); i++) {
@@ -67,14 +67,14 @@ public class Table {
         }
     }
 
-    public void showAll() {
+    public void showAll() { //показать все пары
         for (int i = 0; i < table.size(); i++) {
             System.out.print(table.get(i).getX() + " ");
             System.out.println(table.get(i).getY());
         }
     }
 
-    public Pair findX(double x0) {
+    public Pair findX(double x0) { //найти ближайшую пару по x
         int n = table.size();
         int index = -1;
         double min = MAX_VALUE;
@@ -87,7 +87,7 @@ public class Table {
         return table.get(index);
     }
 
-    public boolean contains(double x, double y) {
+    public boolean contains(double x, double y) { //проверка - есть ли пара в таблице
         for (int i = 0; i < table.size(); i++) {
             if (table.get(i).getX() == x && table.get(i).getY() == y) {
                 return true;
@@ -96,14 +96,14 @@ public class Table {
         return false;
     }
 
-    public void clear() {
+    public void clear() { //очистить всю таблицу
         int n = table.size();
         for (int i = 0; i < n; i++) {
             table.remove(0);
         }
     }
 
-    public void removeDuplicate() {
+    public void removeDuplicate() { //удаление всех повторяющихся
         int n = table.size();
         Table tableHelp = new Table();
         for (int i = 0; i < n; i++) {
@@ -118,7 +118,7 @@ public class Table {
         }
     }
 
-    public double interpolate(double node) { //если одна пара всего -> исключение
+    public double interpolate(double node) { //интерполяция
 
         double lag = 0;
         double polinom;
